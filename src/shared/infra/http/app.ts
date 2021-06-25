@@ -26,18 +26,18 @@ app.use("/car", express.static(`${upload.tmpFolder}/car`));
 app.use(router);
 
 app.use(
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    (err: Error, reques: Request, response: Response, next: NextFunction) => {
-        if (err instanceof AppError) {
-            return response.status(err.statusCode).json({
-                message: err.message,
-            });
-        }
-        return response.status(500).json({
-            status: "error",
-            message: `Internal server error - ${err.message}`,
-        });
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  (err: Error, reques: Request, response: Response, next: NextFunction) => {
+    if (err instanceof AppError) {
+      return response.status(err.statusCode).json({
+        message: err.message,
+      });
     }
+    return response.status(500).json({
+      status: "error",
+      message: `Internal server error - ${err.message}`,
+    });
+  }
 );
 // process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 export { app };
