@@ -36,4 +36,4 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
           source: "., !node_modules" #pasta para onde eu quero copiar , no caso todo projeto por isso o ponto e ignorar node modules
-          target: ":~/app/rental_car" # para verificar se esta funcionando de fato ele criara uma pasta teste
+          target: "~/app/rental_car" # para verificar se esta funcionando de fato ele criara uma pasta teste
